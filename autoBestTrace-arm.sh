@@ -2,14 +2,14 @@
 
 # apt -y install unzip
 
-# install besttrace
-if [ ! -f "besttrace" ]; then
+# install besttrace-arm
+if [ ! -f "besttrace-arm" ]; then
     wget https://github.com/jianping0754/BestTrace-Linux/raw/master/besttrace-arm
     # unzip besttrace4linux.zip
-    chmod +x besttrace
+    chmod +x besttrace-arm
 fi
 
-## start to use besttrace
+## start to use besttrace-arm
 
 next() {
     printf "%-70s\n" "-" | sed 's/\s/-/g'
@@ -25,6 +25,6 @@ ip_addr=(广东电信CN2 广东电信 广东联通 广东移动 广东教育网)
 for i in {0..4}
 do
 	echo ${ip_addr[$i]}
-	./besttrace -q 1 ${ip_list[$i]}
+	./besttrace-arm -q 1 ${ip_list[$i]}
 	next
 done
